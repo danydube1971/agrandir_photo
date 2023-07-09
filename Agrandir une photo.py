@@ -1,19 +1,14 @@
 """Voici un résumé de ce que fait le script :
 
 1. Il commence par ouvrir une boîte de dialogue permettant à l'utilisateur de choisir un fichier image à traiter.
-
 2. Ensuite, il lit le chemin du fichier sélectionné et détermine l'extension du fichier. 
-
-3. Il lit l'image en utilisant la bibliothèque OpenCV. S'il s'agit d'une image PNG, tous les canaux (y compris le canal alpha pour la transparence) sont lus. Pour les autres formats, seuls les canaux de couleur sont lus.
-
+3. Il lit l'image en utilisant la bibliothèque OpenCV. S'il s'agit d'une image PNG, tous les canaux (y compris le canal alpha pour la transparence) sont lus. 
+Pour les autres formats, seuls les canaux de couleur sont lus.
 4. Une fois que l'image est chargée, le script utilise une fonction de la bibliothèque OpenCV pour agrandir l'image. Le facteur d'agrandissement est de 4 fois la taille originale de l'image.
-
-5. Après l'agrandissement, si l'image est une image PNG avec un canal alpha, le script réorganise les canaux de BGR à RGB et préserve le canal alpha pour la transparence. Pour les autres images, le script convertit simplement les canaux de BGR à RGB.
-
+5. Après l'agrandissement, si l'image est une image PNG avec un canal alpha, le script réorganise les canaux de BGR à RGB et préserve le canal alpha pour la transparence. 
+Pour les autres images, le script convertit simplement les canaux de BGR à RGB.
 6. Le script convertit ensuite l'image agrandie et réorganisée en une image PIL (Python Imaging Library), qui est une autre bibliothèque de traitement d'images.
-
 7. Il améliore ensuite l'image en utilisant une fonction de la bibliothèque PIL pour augmenter la netteté de l'image.
-
 8. Enfin, le script sauvegarde l'image améliorée et agrandie en utilisant le même format de fichier que l'image originale (soit JPEG, soit PNG) et ajoute "_enlarged" au nom du fichier original.
 
 Ainsi, le script vous permet d'agrandir et d'améliorer la qualité d'une image sans perdre la transparence pour les images PNG."""
