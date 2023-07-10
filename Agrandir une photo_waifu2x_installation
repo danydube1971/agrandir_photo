@@ -32,9 +32,11 @@ Install the project...
 -- Installing: /usr/local/include/w2xconv.h
 
 
-4. Lorsque vous installez waifu2x-converter-cpp en le compilant à partir des sources, libw2xc.so est créé dans le dossier où vous avez compilé le code. Cependant, le système ne sait pas où trouver cette bibliothèque par défaut.
+4. Lorsque vous installez waifu2x-converter-cpp en le compilant à partir des sources, libw2xc.so est créé dans le dossier où vous avez compilé le code. 
+Cependant, le système ne sait pas où trouver cette bibliothèque par défaut.
 
-Vous pouvez ajouter le chemin vers le dossier contenant libw2xc.so à la variable d'environnement LD_LIBRARY_PATH pour résoudre ce problème. Supposons que libw2xc.so soit situé dans le dossier /usr/local/lib/. Vous pouvez ajouter ce chemin à LD_LIBRARY_PATH en exécutant la commande suivante :
+Vous pouvez ajouter le chemin vers le dossier contenant libw2xc.so à la variable d'environnement LD_LIBRARY_PATH pour résoudre ce problème. 
+Supposons que libw2xc.so soit situé dans le dossier /usr/local/lib/. Vous pouvez ajouter ce chemin à LD_LIBRARY_PATH en exécutant la commande suivante :
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
 
