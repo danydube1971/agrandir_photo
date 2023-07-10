@@ -1,28 +1,23 @@
 # agrandir_photo
-Agrandir une photo JPG ou PNG 4 fois sans trop de perte de qualité
+Le script Python utilise le module `tkinter` pour afficher une boîte de dialogue qui permet à l'utilisateur de sélectionner une image à agrandir. Ce script est spécifiquement conçu pour prendre en charge les formats d'image PNG et JPG.
 
-Voici un résumé de ce que fait le script :
+Une fois que l'image est sélectionnée par l'utilisateur, le script utilise le programme `waifu2x-converter-cpp` pour agrandir l'image jusqu'à quatre fois sa taille originale. La commande de `waifu2x-converter-cpp` est exécutée avec la fonction `subprocess.run()` de Python. Les options spécifiées dans la commande sont les suivantes :
 
-1. Il commence par ouvrir une boîte de dialogue permettant à l'utilisateur de choisir un fichier image à traiter.
-2. Ensuite, il lit le chemin du fichier sélectionné et détermine l'extension du fichier. 
-3. Il lit l'image en utilisant la bibliothèque OpenCV. S'il s'agit d'une image PNG, tous les canaux (y compris le canal alpha pour la transparence) sont lus.
-   Pour les autres formats, seuls les canaux de couleur sont lus.
-4. Une fois que l'image est chargée, le script utilise une fonction de la bibliothèque OpenCV pour agrandir l'image. Le facteur d'agrandissement est de 4 fois la taille originale de l'image.
-5. Après l'agrandissement, si l'image est une image PNG avec un canal alpha, le script réorganise les canaux de BGR à RGB et préserve le canal alpha pour la transparence.
-   Pour les autres images, le script convertit simplement les canaux de BGR à RGB.
-6. Le script convertit ensuite l'image agrandie et réorganisée en une image PIL (Python Imaging Library), qui est une autre bibliothèque de traitement d'images.
-7. Il améliore ensuite l'image en utilisant une fonction de la bibliothèque PIL pour augmenter la netteté de l'image.
-8. Enfin, le script sauvegarde l'image améliorée et agrandie en utilisant le même format de fichier que l'image originale (soit JPEG, soit PNG) et ajoute "_enlarged" au nom du fichier original.
+- `-i "{image_path}"` spécifie le chemin vers l'image d'entrée.
+- `-o "{output_path}"` spécifie le chemin vers l'image de sortie agrandie.
+- `--scale-ratio 4` spécifie le facteur d'agrandissement (4 fois dans ce cas).
+- `-j 2` spécifie le nombre de threads à utiliser pour le traitement.
 
-Ainsi, le script vous permet d'agrandir et d'améliorer la qualité d'une image sans perdre la transparence pour les images PNG.
-
----------------------
-Vous aurez besoin d'installer le module **opencv-python** pour cv2 avec la commande **pip3 install opencv-python**
+Après l'exécution de la commande `waifu2x-converter-cpp`, l'image agrandie est enregistrée à l'emplacement spécifié par l'utilisateur. Le format de l'image de sortie est le même que le format de l'image d'entrée.
 
 ----------------------
 **Comment utiliser le script**
 
-Peu importe où sera placé le script, ouvrir un terminal à son emplacement puis exécuter la commande : **python3 "Agrandir une photo.py"**
+Peu importe où sera placé le script, ouvrir un terminal à son emplacement puis exécuter la commande : **python3 "Agrandir une photo_waifu2x.py"**
+
+------------------
+Si vous voulez agrandir une photo sans *waifu2x-converter-cpp*, utiliser le script **Agrandir une photo.py** mais vous aurez une légère perte de qualité.
+Vous aurez besoin d'installer le module **opencv-python** pour cv2 avec la commande **pip3 install opencv-python**
 
 
 
