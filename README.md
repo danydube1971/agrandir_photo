@@ -13,7 +13,8 @@ Après l'exécution de la commande `waifu2x-converter-cpp`, l'image agrandie est
 ----------------------
 **Comment utiliser le script**
 
-Peu importe où sera placé le script, ouvrir un terminal à son emplacement puis exécuter la commande : **python3 "Agrandir une photo_waifu2x.py"**
+1. Installer *waifu2x-converter-cpp* en suivant les étapes dans le fichier d'installation ci-haut
+2. Peu importe où sera placé le script, ouvrir un terminal à son emplacement puis exécuter la commande : **python3 "Agrandir une photo_waifu2x.py"**
 
 ------------------
 Si vous voulez agrandir une photo sans *waifu2x-converter-cpp*, utiliser le script **Agrandir une photo.py** mais vous aurez une légère perte de qualité.
